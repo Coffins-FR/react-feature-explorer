@@ -1,17 +1,17 @@
 export interface ProductAvailability {
-  productId: number;
+  productId: string;
   available: boolean;
   stock: number;
 }
 
 export interface ProductPrice {
-  productId: number;
+  productId: string;
   price: number;
   currency: string;
 }
 
 export interface AllProducts {
-  id: number;
+  id: string;
   name: string;
   description: string;
   image: string;
