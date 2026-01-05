@@ -1,5 +1,5 @@
 import { renderHook } from "@testing-library/react";
-import useFetchAll from "../useFetchAll";
+import useFetchAll from "./useFetchAll";
 import axios from "axios";
 import { vi, expect, it, afterEach, describe } from "vitest";
 
