@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 
 import Input from "../../components/Input";
-import useFetchAll from "../../hooks/useFetchAll";
+import useFetchAll from "../../hooks/useFetchAll/useFetchAll";
 
 import type {
   ProductAvailability,

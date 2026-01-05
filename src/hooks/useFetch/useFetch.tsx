@@ -6,7 +6,7 @@ const useFetch = <T,>(url: string) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       const response = await axios.get<T>(url);
       setData(response.data);
@@ -15,12 +15,11 @@ const useFetch = <T,>(url: string) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [url]);
 
-  const memoizedFetchData = useCallback(fetchData, [url]);
   useEffect(() => {
-    memoizedFetchData();
-  }, [url, memoizedFetchData]);
+    fetchData();
+  }, [url, fetchData]);
   return { data, loading, error };
 };
 
