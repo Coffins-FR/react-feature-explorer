@@ -7,7 +7,7 @@ export interface ButtonProps {
   onClick?: () => void;
   className?: string;
   type?: "button" | "submit" | "reset";
-  theme?:
+  variant?:
     | "primary"
     | "secondary"
     | "danger"
@@ -22,16 +22,18 @@ const Button = ({
   onClick = () => {},
   className,
   type = "button",
-  theme = "primary",
+  variant = "primary",
   children,
   disabled = false,
   ...props
 }: ButtonProps) => {
   const mainClasseName = clsx(
     className,
-    "px-4 py-2 rounded font-semibold transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer",
+    "px-4 py-2 rounded font-semibold transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ",
     {
-      [`btn-${theme}`]: !!theme,
+      [`btn-${variant}`]: !!variant,
+      "opacity-50 cursor-not-allowed": disabled,
+      "cursor-pointer": !disabled,
     }
   );
   return (

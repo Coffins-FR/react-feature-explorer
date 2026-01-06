@@ -1,6 +1,7 @@
 import React from "react";
 import { type DndItem } from "../../context/DndTodoApp/interface";
 import { useDraggable } from "@dnd-kit/core";
+import clsx from "clsx";
 
 interface DraggableProps extends Pick<DndItem, "id" | "type"> {
   children: React.ReactNode;
@@ -13,6 +14,10 @@ const Draggable = ({ id, type, children }: DraggableProps) => {
   });
   return (
     <div
+      className={clsx({
+        "cursor-grabbing": !!transform,
+        "cursor-grab": !transform,
+      })}
       ref={setNodeRef}
       {...listeners}
       {...attributes}
