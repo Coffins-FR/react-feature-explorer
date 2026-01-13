@@ -15,6 +15,9 @@ const Navbar = () => {
           <li className="hover:text-chart-1 transition ease-in-out">
             <Link to="/page/dogogallery">Dogo Gallery</Link>
           </li>
+          <li className="hover:text-chart-1 transition ease-in-out">
+            <Link to="/page/dynamicform">Dynamic Form</Link>
+          </li>
         </ul>
         <ThemeDropdown />
       </nav>

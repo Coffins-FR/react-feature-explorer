@@ -5,6 +5,7 @@ import DndTodoList from "../features/todolist/page";
 
 import Dogo from "../features/infinitedogogallery/page/Dogo.tsx";
 import Layout from "@/src/features/shared/Layout";
+import DynamicForm from "@/src/features/dynamicform/page/DynamicForm.tsx";
 
 const AppRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const AppRoutes = () => {
           <Route path="page/autocomplete" element={<Autocomplete />} />
           <Route path="page/dndtodolist" element={<DndTodoList />} />
           <Route path="page/dogogallery" element={<Dogo />} />
+          <Route path="page/dynamicform" element={<DynamicForm />} />
         </Route>
       </Routes>
     </BrowserRouter>
